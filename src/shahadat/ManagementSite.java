@@ -5,19 +5,22 @@ import java.util.SortedMap;
 
 public class ManagementSite implements Runnable {
     private Scanner sc;
-    private Teacher teacher;
-    private Student student;
+    public User user;
     private String s ;
 
     @Override
     public void run() {
-        this.student = new Student();
-        initScanner();
+        RunFirst();
         s = StrCli.StrLobbyCLI();
         while (true) {
             System.out.print(s);
-            System.out.println(StrCli.StrAddCLI(s, (student.IsCorrectID(sc.next())).toString()));
+            System.out.println(StrCli.StrAddCLI(s, (user.IsCorrectID(sc.next())).toString()));
         }
+    }
+    private void RunFirst(){
+        this.user = new User();
+        User.HardCodeUser();
+        initScanner();
     }
     private void initScanner() {
         sc = new Scanner(System.in);
