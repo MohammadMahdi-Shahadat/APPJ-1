@@ -1,5 +1,6 @@
 package shahadat;
 
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.SortedMap;
 
@@ -20,6 +21,7 @@ public class ManagementSite implements Runnable {
     private void RunFirst(){
         this.user = new User();
         User.HardCodeUser();
+        University.HardCode();
         initScanner();
     }
     private void initScanner() {
