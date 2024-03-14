@@ -8,9 +8,9 @@ public abstract class course {
     private String IdCourse;
     private Integer SizeMember;
     private Integer SizeUnit;
-    private  Integer TimeClassStart;
+    private Integer TimeClassStart;
     private Integer TimeClassFinish;
-    private String TimeFinal ;
+    private String TimeFinal;
     private ArrayList<Student> ListStudentInCourse = new ArrayList<>();
 
     public course(String teacherName,
@@ -30,18 +30,21 @@ public abstract class course {
         TimeClassFinish = timeClassFinish;
         TimeFinal = timeFinal;
     }
-    public void AddStudent(String IDStudent){
-        ListStudentInCourse.add(GetStudent(IDStudent));
+
+    public void AddStudent(String IDStudent) {
+        ListStudentInCourse.add(User.GetStudent(IDStudent));
     }
-    public void RemoveStudent(String IdStudent){
-        for (int i = 0;i<ListStudentInCourse.size();i++){
-            if(ListStudentInCourse.get(i).getIDStudent().equals(IdStudent)){
+
+    public void RemoveStudent(String IdStudent) {
+        for (int i = 0; i < ListStudentInCourse.size(); i++) {
+            if (ListStudentInCourse.get(i).getIDStudent().equals(IdStudent)) {
                 ListStudentInCourse.remove(i);
             }
         }
-        System.out.println("Student Removed From "+getNameCourse());
+        System.out.println("Student Removed From " + getNameCourse());
     }
-    public Student GetStudent(String idStudent){
+
+    public Student GetStudent(String idStudent) {
         for (Student i : ListStudentInCourse) {
             if (i.getIDStudent().equals(idStudent)) {
                 return i;
@@ -49,12 +52,33 @@ public abstract class course {
         }
         return null;
     }
+
+    public void PrintStudentInCourse() {
+        System.out.println("##############################################################################");
+        System.out.println("List of Student In course :");
+        for (int i=0;i<ListStudentInCourse.size();i++) {
+            try {
+                System.out.println(ListStudentInCourse.get(i).getIDStudent());
+            }catch (Exception e){
+                System.out.println("No any Student in Course !");
+            }
+        }
+        System.out.println("##############################################################################");
+    }
+
     public abstract void PrintCourseEveryThing();
+    public void IncreaseMember(Integer p){
+        setSizeMember(getSizeMember()+p);
+    }
 
     //Integer NumberOfCourse;
     //set course
     //PrintCourseEveryThing
     //EditSizeMember
+
+    public void IncreaseMember(int s) {
+        setSizeMember(s + getSizeMember());
+    }
 
     public String getTeacherName() {
         return TeacherName;
@@ -90,8 +114,5 @@ public abstract class course {
 
     public void setSizeMember(Integer sizeMember) {
         SizeMember = sizeMember;
-    }
-    public void IncreaseMember(int s){
-        setSizeMember(s + getSizeMember());
     }
 }

@@ -1,6 +1,7 @@
 package shahadat;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class University {
@@ -33,7 +34,15 @@ public class University {
         GetCollege("Islamic Knowledge & Education").AddCourseGeneral("Rohani","How to find key","301",1,2,12,14,"14030329");
         GetCollege("Islamic Knowledge & Education").AddCourseGeneral("Raeesy","How to find God","302",4,2,6,8,"14030327");
         GetCollege("Islamic Knowledge & Education").AddCourseGeneral("Helali","Islamic in iran","303",2,2,8,10,"14030305");
-        //Islamic set
+        //IslamicSet
+        //Example
+        User.GetStudent("402109742").AddCourseGeneralInList("Islamic Knowledge & Education","303");
+//
+//        University.GetCollege("Islamic Knowledge & Education").GetGeneral("303").PrintStudentInCourse();
+//
+//        User.GetStudent("402109742").RemoveStudentGeneral("Islamic Knowledge & Education","303");
+//
+//        University.GetCollege("Islamic Knowledge & Education").GetGeneral("303").PrintStudentInCourse();
     }
     public static college GetCollege(String college){
         for (college i : ListCollege) {

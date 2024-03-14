@@ -6,7 +6,6 @@ import java.util.SortedMap;
 
 public class ManagementSite implements Runnable {
     private Scanner sc;
-    public User user;
     private String s ;
 
     @Override
@@ -14,18 +13,19 @@ public class ManagementSite implements Runnable {
         RunFirst();
         s = StrCli.StrLobbyCLI();
         while (true) {
-            System.out.print(s);
-            System.out.println(StrCli.StrAddCLI(s, (user.IsCorrectID(sc.next())).toString()));
+            Runaway();
         }
     }
     private void RunFirst(){
-        this.user = new User();
+        initScanner();
         User.HardCodeUser();
         University.HardCode();
-        initScanner();
     }
     private void initScanner() {
         sc = new Scanner(System.in);
     }
-
+    private void Runaway(){
+        System.out.print(StrCli.StrAddCLI(StrCli.StrLobbyCLI(),""));
+        StrCli.Login(sc.next());
+    }
 }

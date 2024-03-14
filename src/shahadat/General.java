@@ -11,6 +11,7 @@ public class General extends course {
                    String timeFinal) {
         super(teacherName, nameCourse, idCourse, sizeMember, sizeUnit, timeClassStart, timeClassFinish, timeFinal);
     }
+    @Override
     public void PrintCourseEveryThing(){
         System.out.println("General lesson => "+
                 "TeacherName: "+getTeacherName()+" "+

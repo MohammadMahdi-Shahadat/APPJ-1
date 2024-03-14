@@ -17,7 +17,7 @@ public class college {
                                  Integer sizeUnit,
                                  Integer timeClassStart,
                                  Integer timeClassFinish,
-                                 String timeFinal){
+                                 String timeFinal) {
         ListCourseGeneral.add(new General(teacherName, nameCourse, idCourse, sizeMember, sizeUnit, timeClassStart, timeClassFinish, timeFinal));
     }
     public  void AddCourseDedicated(String teacherName,
