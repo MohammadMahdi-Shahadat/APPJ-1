@@ -15,6 +15,18 @@ public class Dedicated extends course{
         super(teacherName, nameCourse, idCourse, sizeMember, sizeUnit, timeClassStart, timeClassFinish, timeFinal);
     }
     @Override
+    public void PrintCourseEveryThing(String CollegeName){
+        System.out.println("Dedicated lesson => "+
+                "TeacherName: "+getTeacherName()+" "+
+                "NameCourse: "+getNameCourse()+" "+
+                "IdCourse: "+getIdCourse()+" "+
+                "SizeUnit: "+getSizeUnit()+" "+
+                "TimeClassStart: "+getTimeClassStart()+" "+
+                "TimeClassFinish: "+getTimeClassFinish()+" "+
+                "TimeFinal: "+getTimeFinal());
+        //this isn't complete need for SizeMember
+    }
+    @Override
     public void PrintCourseEveryThing(){
         System.out.println("Dedicated lesson => "+
                 "TeacherName: "+getTeacherName()+" "+

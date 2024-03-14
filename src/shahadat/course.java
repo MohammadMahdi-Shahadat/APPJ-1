@@ -66,6 +66,7 @@ public abstract class course {
         System.out.println("##############################################################################");
     }
 
+    public abstract void PrintCourseEveryThing(String NameCollege);
     public abstract void PrintCourseEveryThing();
     public void IncreaseMember(Integer p){
         setSizeMember(getSizeMember()+p);

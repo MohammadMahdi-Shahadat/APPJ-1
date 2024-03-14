@@ -22,7 +22,7 @@ public class Student extends User{
         System.out.println("Student "+getIDStudent() +" Add to " + University.GetCollege(CollegeName).getCollegeName());
     }
     public void RemoveStudentGeneral(String CollegeName,String idCourse){
-        this.SizeCourseGeneral -= ListIdCourseGeneral.getLast().getSizeUnit();
+        this.SizeCourseGeneral -= University.GetCollege(CollegeName).GetGeneral(idCourse).getSizeUnit();
         University.GetCollege(CollegeName).GetGeneral(idCourse).RemoveStudent(getIDStudent());//Remove from course
         RemoveGeneral(idCourse);
     }
@@ -46,7 +46,7 @@ public class Student extends User{
         this.SizeCourseDedicated = ListIdCourseDedicated.getLast().getSizeUnit()+this.SizeCourseDedicated;
     }
     public void RemoveStudentDedicated(String CollegeName,String idCourse){
-        this.SizeCourseDedicated -= ListIdCourseDedicated.getLast().getSizeUnit();
+        this.SizeCourseDedicated -= University.GetCollege(CollegeName).GetDedicated(idCourse).getSizeUnit();
         University.GetCollege(CollegeName).GetDedicated(idCourse).RemoveStudent(getIDStudent());//Remove from course
         RemoveDedicated(idCourse);
     }
@@ -75,9 +75,12 @@ public class Student extends User{
         for (General i:ListIdCourseGeneral) {
             i.PrintCourseEveryThing();
         }
+        System.out.println("Sum of Unit General Lesson : " +this.SizeCourseGeneral);
         for (Dedicated i: ListIdCourseDedicated) {
             i.PrintCourseEveryThing();
         }
+            System.out.println("Sum of Unit Dedicated Lesson : " +this.SizeCourseDedicated);
+            System.out.println("Sum of Unit All : "+ (this.SizeCourseGeneral+this.SizeCourseDedicated));
         System.out.println("##############################################################################");
     }
 }
