@@ -7,6 +7,7 @@ public abstract class course {
     private String NameCourse;
     private String IdCourse;
     private Integer SizeMember;
+    private  Integer sizeAddMember;
     private Integer SizeUnit;
     private Integer TimeClassStart;
     private Integer TimeClassFinish;
@@ -29,15 +30,18 @@ public abstract class course {
         TimeClassStart = timeClassStart;
         TimeClassFinish = timeClassFinish;
         TimeFinal = timeFinal;
+        sizeAddMember =sizeMember;
     }
 
     public void AddStudent(String IDStudent) {
+        sizeAddMember -= 1;
         ListStudentInCourse.add(User.GetStudent(IDStudent));
     }
 
     public void RemoveStudent(String IdStudent) {
         for (int i = 0; i < ListStudentInCourse.size(); i++) {
             if (ListStudentInCourse.get(i).getIDStudent().equals(IdStudent)) {
+                sizeAddMember +=1;
                 ListStudentInCourse.remove(i);
             }
         }
@@ -65,8 +69,6 @@ public abstract class course {
         }
         System.out.println("##############################################################################");
     }
-
-    public abstract void PrintCourseEveryThing(String NameCollege);
     public abstract void PrintCourseEveryThing();
     public void IncreaseMember(Integer p){
         setSizeMember(getSizeMember()+p);
@@ -115,5 +117,9 @@ public abstract class course {
 
     public void setSizeMember(Integer sizeMember) {
         SizeMember = sizeMember;
+    }
+
+    public Integer getSizeAddMember() {
+        return sizeAddMember;
     }
 }

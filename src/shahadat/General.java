@@ -12,19 +12,6 @@ public class General extends course {
         super(teacherName, nameCourse, idCourse, sizeMember, sizeUnit, timeClassStart, timeClassFinish, timeFinal);
     }
     @Override
-    public void PrintCourseEveryThing(String NameCollege){
-        System.out.println("General lesson => "+
-                "TeacherName: "+getTeacherName()+" "+
-                "NameCourse: "+getNameCourse()+" "+
-                "IdCourse: "+getIdCourse()+" "+
-                "SizeUnit: "+getSizeUnit()+" "+
-                "TimeClassStart: "+getTimeClassStart()+" "+
-                "TimeClassFinish: "+getTimeClassFinish()+" "+
-                "TimeFinal: "+getTimeFinal()+
-                "From College :"+NameCollege);
-        //this isn't complete need for SizeMember
-    }
-    @Override
     public void PrintCourseEveryThing(){
         System.out.println("General lesson => "+
                 "TeacherName: "+getTeacherName()+" "+
@@ -33,7 +20,9 @@ public class General extends course {
                 "SizeUnit: "+getSizeUnit()+" "+
                 "TimeClassStart: "+getTimeClassStart()+" "+
                 "TimeClassFinish: "+getTimeClassFinish()+" "+
-                "TimeFinal: "+getTimeFinal());
+                "TimeFinal: "+getTimeFinal()+" "+
+                "Member :  "+ (getSizeMember()-getSizeAddMember())+"/"+getSizeMember());
         //this isn't complete need for SizeMember
     }
+
 }

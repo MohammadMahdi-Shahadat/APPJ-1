@@ -83,4 +83,40 @@ public class Student extends User{
             System.out.println("Sum of Unit All : "+ (this.SizeCourseGeneral+this.SizeCourseDedicated));
         System.out.println("##############################################################################");
     }
+
+    public Integer getSizeCourseGeneral() {
+        return SizeCourseGeneral;
+    }
+
+    public Integer getSizeCourseDedicated() {
+        return SizeCourseDedicated;
+    }
+    public boolean CheckTimeFinaleAndClass(Integer StartClass,Integer FinishClass,String TimeFinale){
+        boolean t =true;
+        for (General i : ListIdCourseGeneral){
+            if (i.getTimeFinal().equals(TimeFinale)){
+                System.out.println("this TimeFinale Have OverLap With :");
+                i.PrintCourseEveryThing();
+                t =false;
+            }
+            if (((i.getTimeClassStart() > StartClass)&&(i.getTimeClassStart() < FinishClass))  || ((i.getTimeClassFinish() > StartClass)&&(i.getTimeClassFinish() < FinishClass))){
+                System.out.println("thi TimeClass Have OverLap With :");
+                i.PrintCourseEveryThing();
+                t =false;
+            }
+        }
+        for (Dedicated i : ListIdCourseDedicated){
+            if (i.getTimeFinal().equals(TimeFinale)){
+                System.out.println("this TimeFinale Have OverLap With :");
+                i.PrintCourseEveryThing();
+                t =false;
+            }
+            if (((i.getTimeClassStart() > StartClass)&&(i.getTimeClassStart() < FinishClass))  || ((i.getTimeClassFinish() > StartClass)&&(i.getTimeClassFinish() < FinishClass))){
+                System.out.println("thi TimeClass Have OverLap With :");
+                i.PrintCourseEveryThing();
+                t =false;
+            }
+        }
+        return t;
+    }
 }

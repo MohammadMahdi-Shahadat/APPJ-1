@@ -50,7 +50,7 @@ public class college {
         System.out.println("##############################################################################");
         System.out.println("The List All course in "+getCollegeName()+"'s college");
         for (General i : ListCourseGeneral){
-            i.PrintCourseEveryThing(getCollegeName());
+            i.PrintCourseEveryThing();
         }
         for (Dedicated i : ListCourseDedicated){
             i.PrintCourseEveryThing();
