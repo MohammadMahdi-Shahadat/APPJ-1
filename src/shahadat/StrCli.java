@@ -18,17 +18,70 @@ public class StrCli {
         //harecat rahat baray bargasht be halat avale
         initScanner();
         if(User.IsCorrectID(Id)){
-            setIdOnline(Id);
-            System.out.println("Wellcome sir "+"You login With Id "+ getIdOnline());
-
             if(Id.equals("Admin")){
-                Teacher.Onlline = true;
-                LoginedAdmin();
+                System.out.println("Hi Admin pleas enter your password Or Back");
+                while (Home){
+                    System.out.print(StrAddCLI(StrLobbyCLI(),"\\Password"));
+                    String s =sc.next();
+                    if (s.equals("Back")){
+                        Home = false;
+                    } else if (s.equals("mmsh4831")) {
+                        setIdOnline(Id);
+                        System.out.println("Wellcome sir "+"You login With Id "+ getIdOnline());
+                        Teacher.Onlline = true;
+                        LoginedAdmin();
+                    }else {
+                        System.out.println("Incorrect Password");
+                    }
+                    Teacher.Onlline = false;
+                }
             }else {
-                LoginedStudent();
+                System.out.println("Hi student "+Id);
+                System.out.println("enter your password Or Back");
+                while (Home){
+                    System.out.print(StrAddCLI(StrLobbyCLI(),"\\Password"));
+                    String s =sc.next();
+                    if (s.equals("Back")){
+                        Home = false;
+                    } else if (s.equals(User.GetStudent(Id).getPassStudent())) {
+                        setIdOnline(Id);
+                        System.out.println("Wellcome sir "+"You login With Id "+ getIdOnline());
+                        LoginedStudent();
+                    }else {
+                        System.out.println("Incorrect Password");
+                    }
+                }
+
             }
-        }else {
+        } else if (Id.equals("SignUp")) {
+            SignUp();
+        } else {
             System.out.println("There is no such ID.");
+        }
+    }
+    public static void SignUp(){
+        while (Home){
+            System.out.println("type your UserName / Or / Back");
+            System.out.print(StrAddCLI(StrLobbyCLI(),"\\SignUp"));
+            String s = sc.next();
+            if (s.equals("Back")){
+
+            }else {
+                while (Home){
+                    System.out.println("type your Password / Or / Back /Home");
+                    System.out.print(StrAddCLI(StrLobbyCLI(),"\\SignUp"));
+                    String s1 = sc.next();
+                    if(s1.equals("Back")){
+                        break;
+                    } else if (s1.equals("Home")) {
+                        Home =false;
+                    }else {
+                        User.AddStudent(s,s1);
+                        Home =false;
+                        System.out.println("Add New Student");
+                    }
+                }
+            }
         }
     }
     public static void LoginedAdmin(){

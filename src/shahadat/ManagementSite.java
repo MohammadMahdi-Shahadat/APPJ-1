@@ -25,6 +25,7 @@ public class ManagementSite implements Runnable {
         sc = new Scanner(System.in);
     }
     private void Runaway(){
+        System.out.println("You can use this order name : SignUp / type (user | pass) (Login with your username)");
         System.out.print(StrCli.StrAddCLI(StrCli.StrLobbyCLI(),""));
         StrCli.Login(sc.next());
     }

@@ -4,16 +4,18 @@ import java.util.ArrayList;
 
 public class Student extends User{
     private final String IDStudent;
+    private final String PassStudent;
     private Integer SizeCourseGeneral;
     private Integer SizeCourseDedicated;
     private ArrayList<General> ListIdCourseGeneral = new ArrayList<>();
     private ArrayList<Dedicated> ListIdCourseDedicated = new ArrayList<>();
 
 
-    Student(String iDStudent) {
+    Student(String iDStudent,String Pass) {
         this.SizeCourseDedicated=0;
         this.SizeCourseGeneral=0;
         this.IDStudent = iDStudent;
+        this.PassStudent = Pass;
     }
     public void AddCourseGeneralInList(String CollegeName,String idCourse){// needs for complete
         ListIdCourseGeneral.add(University.GetCollege(CollegeName).GetGeneral(idCourse));
@@ -118,5 +120,9 @@ public class Student extends User{
             }
         }
         return t;
+    }
+
+    public String getPassStudent() {
+        return PassStudent;
     }
 }

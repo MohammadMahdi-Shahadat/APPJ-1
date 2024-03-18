@@ -13,17 +13,17 @@ public class User {
 
 
     public static void HardCodeUser(){
-        AddStudent("402109740");
-        AddStudent("402109741");
-        AddStudent("402109742");
-        AddStudent("402109743");
-        AddStudent("402109744");
+        AddStudent("402109740","0");
+        AddStudent("402109741","1");
+        AddStudent("402109742","2");
+        AddStudent("402109743","3");
+        AddStudent("402109744","4");
         IDTeacher.add("Admin");
     }
 
 
-    public static void AddStudent(String id){
-        StudentA.add(new Student(id));
+    public static void AddStudent(String id,String pass){
+        StudentA.add(new Student(id,pass));
         IDStudent.add(id);
     }
 
