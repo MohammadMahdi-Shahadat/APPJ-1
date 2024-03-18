@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class college {
     private String CollegeName;
-    private ArrayList<General> ListCourseGeneral = new ArrayList<>();
-    private ArrayList<Dedicated> ListCourseDedicated = new ArrayList<>();
+    public ArrayList<General> ListCourseGeneral = new ArrayList<>();
+    public ArrayList<Dedicated> ListCourseDedicated = new ArrayList<>();
 
     public college(String CollegeName) {
         this.CollegeName = CollegeName;
@@ -43,6 +43,27 @@ public class college {
             if (i.getIdCourse().equals(idCourse)) {
                 return i;
             }
+        }
+        return null;
+    }
+    public Integer  GetDedicatedPortocol(String idCourse){
+        int t =0;
+        for (Dedicated i : ListCourseDedicated) {
+
+            if (i.getIdCourse().equals(idCourse)) {
+                return t;
+            }
+            t++;
+        }
+        return null;
+    }
+    public Integer  GetGeneralPortocol(String idCourse){
+        int t =0;
+        for (General i : ListCourseGeneral) {
+            if (i.getIdCourse().equals(idCourse)) {
+                return t;
+            }
+            t++;
         }
         return null;
     }

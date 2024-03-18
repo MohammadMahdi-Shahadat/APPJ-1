@@ -17,6 +17,12 @@ public class University {
         AddCollege("Physics");
         AddCollege("ComputerEngineering");
         AddCollege("IslamicKnowledge&Education");
+        AddCollege("EnergyEngineering");
+        AddCollege("ThePhilosophyOfScience");
+        AddCollege("MechanicalEngineering");
+        AddCollege("ElectricalEngineering");
+        AddCollege("Chemistry");
+
         GetCollege("MathematicalScience").AddCourseDedicated("Dr.Moghadasi","Math1","000",5,4,10,12,"14030309");
         GetCollege("MathematicalScience").AddCourseDedicated("Dr.SHahshahani","Algebra Liner","001",2,4,13,15,"14030315");
         GetCollege("MathematicalScience").AddCourseGeneral("Dr.ArashAckmall","Persian the literature","002",8,3,15,17,"14030228");
@@ -37,6 +43,7 @@ public class University {
         //IslamicSet
         //Example
         User.GetStudent("402109742").AddCourseGeneralInList("IslamicKnowledge&Education","303");
+        User.GetStudent("402109743").AddCourseGeneralInList("IslamicKnowledge&Education","303");
 //
 //        University.GetCollege("Islamic Knowledge & Education").GetGeneral("303").PrintStudentInCourse();
 //

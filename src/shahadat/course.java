@@ -71,7 +71,10 @@ public abstract class course {
     }
     public abstract void PrintCourseEveryThing();
     public void IncreaseMember(Integer p){
-        setSizeMember(getSizeMember()+p);
+        int q =getSizeMember()+p;
+        int q1 = getSizeAddMember()+p;
+        setSizeMember(q);
+        setSizeAddMember(q1);
     }
 
     //Integer NumberOfCourse;
@@ -121,5 +124,13 @@ public abstract class course {
 
     public Integer getSizeAddMember() {
         return sizeAddMember;
+    }
+
+    public void setSizeAddMember(Integer sizeAddMember) {
+        this.sizeAddMember = sizeAddMember;
+    }
+
+    public ArrayList<Student> getListStudentInCourse() {
+        return ListStudentInCourse;
     }
 }
